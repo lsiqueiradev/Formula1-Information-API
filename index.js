@@ -24,8 +24,7 @@ app.get("/driver/info", async function (req, res) {
           const value = $(element).find("td").text();
           r[helpers.camelize(label)] = value;
         });
-        var finalResult = { result: r };
-        res.status(200).json(finalResult);
+        res.status(200).json(r);
       })
       .catch((err) => {
         console.log(err);
@@ -49,8 +48,7 @@ app.get("/team/info", async function (req, res) {
           const value = $(element).find("td").text();
           r[helpers.camelize(label)] = value;
         });
-        var finalResult = { result: r };
-        res.status(200).json(finalResult);
+        res.status(200).json(r);
       })
       .catch((err) => {
         console.log(err);
@@ -74,8 +72,7 @@ app.get("/circuit/info", async function (req, res) {
           const value = $(element).find("div > p.f1-bold--stat").text().replace('\n', '').trim();
           r[helpers.camelize(label)] = value;
         });
-        var finalResult = { result: r };
-        res.status(200).json(finalResult);
+        res.status(200).json(r);
       })
       .catch((err) => {
         console.log(err);
