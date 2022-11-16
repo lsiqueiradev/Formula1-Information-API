@@ -85,4 +85,4 @@ app.get("/circuit/info", async function (req, res) {
 });
 
 var httpServer = http.createServer(app);
-httpServer.listen(port);
+httpServer.listen(process.env.PORT || port);
