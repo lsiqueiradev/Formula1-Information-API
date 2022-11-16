@@ -71,7 +71,7 @@ app.get("/circuit/info", async function (req, res) {
           "body > div.site-wrapper > main > div > div.racehub-page > div.racehub-page-section > div > div > div.f1-race-hub--map > fieldset > div > div.col-xl-5 > div > div.col-lg-8.col-xl-12 > div > div"
         ).each((index, element) => {
           const label = $(element).find("div > p.misc--label").text();
-          const value = $(element).find("div > p.f1-bold--stat").text();
+          const value = $(element).find("div > p.f1-bold--stat").text().replace('\n', '').trim();
           r[helpers.camelize(label)] = value;
         });
         var finalResult = { result: r };
