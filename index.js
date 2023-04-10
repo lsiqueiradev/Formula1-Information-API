@@ -61,7 +61,7 @@ app.get("/circuit/info", async function (req, res) {
   if (req.query.country != null) {
     console.log(`/circuit/info - ${req.query.country}`);
     axios
-      .get(`${baseUrl}/racing/2022/${req.query.country}/Circuit.html`)
+      .get(`${baseUrl}/racing/2023/${req.query.country}/Circuit.html`)
       .then((result) => {
         var r = {};
         const $ = cheerio.load(result.data);
